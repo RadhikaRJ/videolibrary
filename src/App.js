@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import Homepage from "./pages/homepage"
+import Navigation from "./displaycomponents/navigation/navbar";
+import Footer from "./displaycomponents/footer/footer";
+import SpringVideoList from "./pages/springGardening";
+import MonsoonVideoList from "./pages/monsoonGardening";
+import WinterVideoList from "./pages/winterGardening";
+import SummerVideoList from "./pages/summerGardening";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+            <Navigation/>               
+                <Switch>
+                    <Route exact path="/"><Homepage/></Route>
+                    <Route exact path="/spring"><SpringVideoList/></Route>
+                    <Route exact path="/summer"><SummerVideoList/></Route>
+                    <Route exact path="/winter"><WinterVideoList/></Route>
+                    <Route exact path="/monsoon"><MonsoonVideoList/></Route>
+                </Switch>        
+               
+             
+             <Footer/>
+              
+            
     </div>
   );
 }
