@@ -23,24 +23,24 @@ function videoPlaylistReducer(state,action){
         case "ADD_TO_FAVORITES":
             return{
                 favoriteList:state.favoriteList.concat(action.props.item),
-                watchLaterList
+                watchLaterList: state.watchLaterList
             };
         break;
         case "REMOVE_FROM_FAVORITES":
             return{
                 favoriteList:state.favoriteList.filter((item)=>action.item.id !==item.id),
-                watchLaterList
+                watchLaterList: state.watchLaterList
             }
             break;
         case "ADD_TO_WATCHLATER":
             return{
-                favoriteList,
+                favoriteList:state.favoriteList,
                 watchLaterList:state.watchLaterList.concat(action.props.item)
             }
             break;
         case "REMOVE_FROM_WATCHLATER":
             return{
-                favoriteList,
+                favoriteList:state.favoriteList,
                 watchLaterList:state.watchLaterList.filter((item)=>action.item.id !==item.id)
             }
             break;
