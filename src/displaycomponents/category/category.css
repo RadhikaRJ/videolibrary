@@ -142,7 +142,7 @@ margin:0 auto;
     padding:1rem;
     flex-wrap:wrap;
     margin:1rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .video-style{
