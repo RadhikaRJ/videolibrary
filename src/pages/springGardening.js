@@ -15,7 +15,7 @@ function SpringVideoList(){
                     if(item.category==="spring"){
                         return (<div className="video-style">
                             <ReactPlayer url= {item.url} controls={true} width="420px" height="250px" />
-                            <LikeButton/>
+                            <LikeButton item={item}/>
                              
                            </div>) 
                     }
