@@ -147,3 +147,8 @@ margin:0 auto;
     margin:0rem 1rem;
     border: 3px solid var(--secondary-color);
 }
+.video-btns{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}

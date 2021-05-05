@@ -9,6 +9,7 @@ import MonsoonVideoList from "./pages/monsoonGardening";
 import WinterVideoList from "./pages/winterGardening";
 import SummerVideoList from "./pages/summerGardening";
 import Favorites from "./pages/favorites";
+import WatchLaterVideoList from "./pages/watchLaterList";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path="/winter"><WinterVideoList/></Route>
                     <Route exact path="/monsoon"><MonsoonVideoList/></Route>
                     <Route exact path="/favorites"><Favorites/></Route>
+                    <Route exact path="/watchLaterList"><WatchLaterVideoList/></Route>
                 </Switch>        
                
              
