@@ -17,7 +17,7 @@ import {Link} from "react-router-dom";
                                     <a class="link" href=""><span class="material-icons md-24">playlist_add</span></a>
                                 </li>
                                 <li class="list-item-inline">
-                                    <a class="link" href=""><span class="material-icons">favorite</span></a>
+                                    <Link to="/favorites" class="link"><span class="material-icons">favorite</span></Link>
                                 </li>
                             </ul>
                         </nav>

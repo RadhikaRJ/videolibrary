@@ -15,7 +15,7 @@ function SummerVideoList(){
                             <LikeButton/>
                            </div>) 
                     }
-                  return;
+                  return (<div></div>);
                 }) 
             }
         

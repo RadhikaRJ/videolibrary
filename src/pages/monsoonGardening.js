@@ -15,7 +15,7 @@ function MonsoonVideoList(){
                             <LikeButton/>
                            </div>) 
                     }
-                  return;
+                  return (<div></div>);
                 }) 
             }
         

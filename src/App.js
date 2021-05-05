@@ -8,6 +8,7 @@ import SpringVideoList from "./pages/springGardening";
 import MonsoonVideoList from "./pages/monsoonGardening";
 import WinterVideoList from "./pages/winterGardening";
 import SummerVideoList from "./pages/summerGardening";
+import Favorites from "./pages/favorites";
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
                     <Route exact path="/summer"><SummerVideoList/></Route>
                     <Route exact path="/winter"><WinterVideoList/></Route>
                     <Route exact path="/monsoon"><MonsoonVideoList/></Route>
-                    
+                    <Route exact path="/favorites"><Favorites/></Route>
                 </Switch>        
                
              
