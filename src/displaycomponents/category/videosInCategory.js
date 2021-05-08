@@ -1,4 +1,4 @@
-import "./category.css";
+import "../../styles/category.css";
 import LikeButton from "../likeButton/likefunctionality";
 import WatchLaterButton from "../watchLaterButton/watchLater";
 import  ReactPlayer from "react-player";

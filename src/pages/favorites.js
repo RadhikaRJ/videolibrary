@@ -1,7 +1,9 @@
 import {useVideoPlayerContext} from "../contexts/videoListcontext";
 import  ReactPlayer from "react-player";
-import "../displaycomponents/category/category.css";
-import "../displaycomponents/category/button.css";
+
+import "../styles/category.css"
+import "../styles/button.css"
+
 
 function Favorites(){
  const {favoriteList,dispatch} =useVideoPlayerContext();

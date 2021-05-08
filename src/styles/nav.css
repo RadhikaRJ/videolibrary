@@ -13,10 +13,6 @@
     padding: 0rem 0.5rem;
 }
 
-.navigation {    
-    
-    
-}
 
 .navigation .nav-brand {
     font-weight: bold;
@@ -27,10 +23,7 @@
     text-align: right;
 }
 
-.navigation .link {
-   
 
-}
 
 .navigation .link-active {
     font-weight: bold;

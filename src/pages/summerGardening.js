@@ -1,6 +1,6 @@
 
 import {videoData} from "../data/videodataList";
-import "../displaycomponents/category/category.css";
+import "../styles/category.css";
 import VideosInCategory from "../displaycomponents/category/videosInCategory";
 
 function SummerVideoList(){

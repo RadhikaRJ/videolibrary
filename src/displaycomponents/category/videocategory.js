@@ -1,5 +1,5 @@
-import "./category.css";
-import "./button.css";
+import "../../styles/category.css";
+import "../../styles/button.css";
 import {Link} from "react-router-dom";
 export function VideoCategoryComponent(props){
 
