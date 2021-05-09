@@ -8,12 +8,14 @@ import "../../styles/playlist.css";
    
     const [addStatus,setAddStatus]=useState(false);
     const addIntoPlaylist=(playlist)=>{
-   dispatch({type:"ADD_REMOVE_FROM_PLAYLIST",playlist,props});
+   dispatch({type:"ADD_REMOVE_FROM_PLAYLIST",payload:{playlist,props}});
     }
 
-   console.log(state.userPlaylists);
+   
    
     const allPlaylists=Object.keys(state.userPlaylists);
+    
+
 
     return(<div>
         <button class="material-icons btn-icon material-icons-outlined"

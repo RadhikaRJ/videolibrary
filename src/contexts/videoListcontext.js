@@ -21,9 +21,10 @@ export const watchLaterList=[];
 }
 
 export const checkVideoInPlaylist=(playlist,id)=>{
-    console.log(playlist);
+    // console.log(playlist);
     for(let video in playlist){
-        if(video.id === id){
+        // console.log(video);
+        if(playlist[video].id === id){
            
             return true;
         }
@@ -71,12 +72,12 @@ function videoPlaylistReducer(state,action){
             }
            
         case "ADD_REMOVE_FROM_PLAYLIST":
-            return checkVideoInPlaylist(state.userPlaylists[action.playlist],action.props.item.id) 
+            return checkVideoInPlaylist(state.userPlaylists[action.payload.playlist],action.payload.props.item.id) 
                     ? {
                         ...state,
                         userPlaylists:{
                             ...state.userPlaylists,
-                            [action.playlist]:state.userPlaylists[action.playlist].filter((video)=>video.id!==action.props.item.id),
+                            [action.payload.playlist]:state.userPlaylists[action.payload.playlist].filter((item)=>item.id!==action.payload.props.item.id),
                         },
                     }
                     :
@@ -84,7 +85,7 @@ function videoPlaylistReducer(state,action){
                         ...state,
                         userPlaylists:{
                             ...state.userPlaylists,
-                            [action.playlist]:[...state.userPlaylists[action.playlist],action.props.item],
+                            [action.payload.playlist]:[...state.userPlaylists[action.payload.playlist],action.payload.props.item],
                         },
                     };
                

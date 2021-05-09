@@ -8,7 +8,7 @@ import { useVideoPlayerContext } from "../../contexts/videoListcontext";
 function CreateNewPlaylist(){
  const {dispatch} = useVideoPlayerContext();
  const [newPlaylistName,setNewPlaylistName]=useState("");
-const value="";
+
  const handleChange = (event)=>{
      setNewPlaylistName(event.target.value)
  }
