@@ -5,7 +5,7 @@ import summerpic from "../assets/images/summergardening.jpg";
 import winterpic from "../assets/images/wintergardening.jpg"
 import monsoonpic from "../assets/images/monsoongardening.jpg"
 import springpic from "../assets/images/springgardening.jpg"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 function Homepage(){
 
     return(

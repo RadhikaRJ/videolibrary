@@ -12,7 +12,7 @@ export const watchLaterList=[];
         MyPlaylist: [],
       },})
     return (
-        <VideoPlayerContext.Provider value={{favoriteList:state.favoriteList,watchLaterList:state.watchLaterList, userPlaylists:state.userPlaylists, dispatch}}>{children}</VideoPlayerContext.Provider>
+        <VideoPlayerContext.Provider value={{state, dispatch}}>{children}</VideoPlayerContext.Provider>
     )
 }
 
@@ -21,14 +21,15 @@ export const watchLaterList=[];
 }
 
 export const checkVideoInPlaylist=(playlist,id)=>{
+    console.log(playlist);
     for(let video in playlist){
         if(video.id === id){
-            console.log("true");
+           
             return true;
         }
         
     }
-    console.log("false");
+   
     return false;
 }
 
@@ -40,26 +41,26 @@ function videoPlaylistReducer(state,action){
                 favoriteList:state.favoriteList.concat(action.props.item),
                 
             };
-        break;
+      
         case "REMOVE_FROM_FAVORITES":
             return{
                 ...state,
                 favoriteList:state.favoriteList.filter((item)=>action.item.id !==item.id),
                 
             }
-            break;
+           
         case "ADD_TO_WATCHLATER":
             return{
                ...state,
                 watchLaterList:state.watchLaterList.concat(action.props.item)
             }
-            break;
+          
         case "REMOVE_FROM_WATCHLATER":
             return{
                 ...state,
                 watchLaterList:state.watchLaterList.filter((item)=>action.item.id !==item.id)
             }
-            break;
+           
         case "CREATE_NEW_PLAYLIST":
             return{
                 ...state,
@@ -68,14 +69,14 @@ function videoPlaylistReducer(state,action){
                     [action.payload.newPlaylistName]:[],
                 }
             }
-            break;
+           
         case "ADD_REMOVE_FROM_PLAYLIST":
-            return checkVideoInPlaylist(state.userPlaylists[action.payload.playlist],action.payload.item.id) 
+            return checkVideoInPlaylist(state.userPlaylists[action.playlist],action.props.item.id) 
                     ? {
                         ...state,
                         userPlaylists:{
                             ...state.userPlaylists,
-                            [action.payload.playlist]:state.userPlaylists[action.payload.playlist].filter((video)=>video.id!==action.payload.item.id),
+                            [action.playlist]:state.userPlaylists[action.playlist].filter((video)=>video.id!==action.props.item.id),
                         },
                     }
                     :
@@ -83,10 +84,10 @@ function videoPlaylistReducer(state,action){
                         ...state,
                         userPlaylists:{
                             ...state.userPlaylists,
-                            [action.payload.playlist]:[...state.userPlaylists[action.payload.playlist],action.payload.item],
+                            [action.playlist]:[...state.userPlaylists[action.playlist],action.props.item],
                         },
                     };
-                break;
+               
         default:
             return;
         }

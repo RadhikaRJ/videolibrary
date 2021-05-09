@@ -2,17 +2,18 @@
 import {useState} from "react";
 import { useVideoPlayerContext,checkVideoInPlaylist} from "../../contexts/videoListcontext";
 import "../../styles/playlist.css";
-    function AddToPlaylist({item}){
+    function AddToPlaylist(props){
 
-    const {userPlaylists,dispatch}=useVideoPlayerContext();
+    const {state,dispatch}=useVideoPlayerContext();
    
     const [addStatus,setAddStatus]=useState(false);
     const addIntoPlaylist=(playlist)=>{
-   dispatch({type:"ADD_REMOVE_FROM_PLAYLIST",payload:{playlist,item}});
+   dispatch({type:"ADD_REMOVE_FROM_PLAYLIST",playlist,props});
     }
 
+   console.log(state.userPlaylists);
    
-    const allPlaylists=Object.keys(userPlaylists);
+    const allPlaylists=Object.keys(state.userPlaylists);
 
     return(<div>
         <button class="material-icons btn-icon material-icons-outlined"
@@ -24,10 +25,11 @@ import "../../styles/playlist.css";
                 <ul className="playlist-list">
                     {
                         allPlaylists.map((playlist)=>(
+                           
                             <li key={playlist} className="playlist-list-item">
                                 <input type="checkbox" className="checkbox-input"
                                 onChange={()=>addIntoPlaylist(playlist)}
-                                 checked={checkVideoInPlaylist(userPlaylists[playlist],item.id)}
+                                 checked={checkVideoInPlaylist(state.userPlaylists[playlist],props.item.id)}
                                 ></input>
                                 <span>{playlist}</span>
                             </li>

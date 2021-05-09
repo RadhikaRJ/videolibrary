@@ -4,9 +4,9 @@ import "../../styles/playlist.css";
 
 
 function ExistingPlaylists(){
- const {userPlaylists}=useVideoPlayerContext();
- const userCreatedPlaylists=Object.keys(userPlaylists);
-console.log({userCreatedPlaylists});
+ const {state}=useVideoPlayerContext();
+ const userCreatedPlaylists=Object.keys(state.userPlaylists);
+console.log(state.userCreatedPlaylists);
     return(<div className="existingplaylist-container">
        
         
@@ -16,7 +16,7 @@ console.log({userCreatedPlaylists});
                 <h3>{playlist}</h3>
                 <div>
                     {
-                        userPlaylists[playlist].map((item)=>(
+                        state.userPlaylists[playlist].map((item)=>(
                             <VideosInCategory item={item}/>
                         ))
                     }
