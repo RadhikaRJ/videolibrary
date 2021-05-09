@@ -10,6 +10,7 @@ import WinterVideoList from "./pages/winterGardening";
 import SummerVideoList from "./pages/summerGardening";
 import Favorites from "./pages/favorites";
 import WatchLaterVideoList from "./pages/watchLaterList";
+import Playlist from "./pages/private/playlists";
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
                     <Route exact path="/monsoon"><MonsoonVideoList/></Route>
                     <Route exact path="/favorites"><Favorites/></Route>
                     <Route exact path="/watchLaterList"><WatchLaterVideoList/></Route>
+                    <Route exact path="/private/playlist"><Playlist/></Route>
                 </Switch>        
                
              
@@ -33,3 +35,4 @@ function App() {
 }
 
 export default App;
+// https://codesandbox.io/s/react-router-auth-10-forked-pd4vr?file=/src/App.jsx

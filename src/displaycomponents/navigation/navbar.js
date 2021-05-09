@@ -14,7 +14,7 @@ import {Link} from "react-router-dom";
                                     <Link to="/watchLaterList" class="link"><span class="material-icons md-24">watch_later</span></Link>
                                 </li>
                                 <li class="list-item-inline">
-                                    <a class="link" href=""><span class="material-icons md-24">playlist_add</span></a>
+                                    <Link to="/private/Playlist" class="link"  ><span class="material-icons md-24">playlist_add</span></Link>
                                 </li>
                                 <li class="list-item-inline">
                                     <Link to="/favorites" class="link"><span class="material-icons">favorite</span></Link>

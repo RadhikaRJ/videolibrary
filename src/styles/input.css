@@ -1,0 +1,12 @@
+::placeholder{
+    color:var(--secondary-color);
+
+}
+
+input[type=text]{
+    border:2px solid var(--secondary-color);
+    color:var(--secondary-color);
+    box-sizing:border-box;
+    margin:0.5rem;
+    padding:0.25rem;
+}

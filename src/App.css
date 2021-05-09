@@ -8,7 +8,8 @@
   --tertiary-color: #7F1D1D;
   /* #7F1D1D */
   --current-selected-color: white;
-  font-family: 'Gabriela', serif;
+  /* font-family: 'Gabriela', serif; */
+  font-family: 'Roboto', sans-serif;
 
   color:var(--secondary-color);
   
