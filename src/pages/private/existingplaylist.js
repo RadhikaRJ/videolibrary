@@ -1,15 +1,18 @@
 import {useVideoPlayerContext} from "../../contexts/videoListcontext";
 import VideosInCategory from "../../displaycomponents/category/videosInCategory";
+import "../../styles/playlist.css";
+
+
 function ExistingPlaylists(){
  const {userPlaylists}=useVideoPlayerContext();
  const userCreatedPlaylists=Object.keys(userPlaylists);
 console.log({userCreatedPlaylists});
-    return(<div>
-        <h3>Existing Playlist </h3>
+    return(<div className="existingplaylist-container">
+       
         
         {
             userCreatedPlaylists.map((playlist)=>(
-                <div kay={playlist}>
+                <div key={playlist} className="individual-playlist-container">
                 <h3>{playlist}</h3>
                 <div>
                     {

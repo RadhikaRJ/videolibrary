@@ -2,14 +2,11 @@
   text-align: center;
   --primary-color: #F9FAFB;
   --secondary-color: #831843;
-  /* #e41b50 */
-
-  /* #831843 */
+ 
   --tertiary-color: #7F1D1D;
-  /* #7F1D1D */
+  
   --current-selected-color: white;
-  /* font-family: 'Gabriela', serif; */
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
   color:var(--secondary-color);
   
@@ -26,3 +23,9 @@
   padding:1rem;
 }
 
+@media screen and (min-width:420px){
+ 
+  .multiple-playlists-section{
+    flex-direction: column;
+  }
+}

@@ -12,7 +12,7 @@ const value="";
  const handleChange = (event)=>{
      setNewPlaylistName(event.target.value)
  }
-    return(<div >
+    return(<div className="create-new-playlist" >
         
         <h3>Add a new Playlist</h3>
         <label><strong>Playlist Name:</strong></label>
