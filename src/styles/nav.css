@@ -39,3 +39,8 @@
 li>a>span{
 color:var(--primary-color);
 }
+
+
+.activeNav>span{
+    color:yellow;
+}
