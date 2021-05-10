@@ -3,7 +3,7 @@ import  ReactPlayer from "react-player";
 
 import "../styles/category.css"
 import "../styles/button.css"
-
+import {REMOVE_FROM_FAVORITES} from "../constants/constants";
 
 function Favorites(){
  const {state,dispatch} =useVideoPlayerContext();
@@ -16,7 +16,7 @@ function Favorites(){
             state.favoriteList.map((item)=>{
                 return (<div className="video-style">
                             <ReactPlayer url= {item.url} controls={true} width="420px" height="250px" />
-                            <button className="link-Text-Btn" onClick={()=>dispatch({type:"REMOVE_FROM_FAVORITES",item})}>Remove</button>
+                            <button className="link-Text-Btn" onClick={()=>dispatch({type:REMOVE_FROM_FAVORITES,item})}>Remove</button>
                            </div>) 
             })
        }

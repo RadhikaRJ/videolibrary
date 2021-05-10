@@ -4,6 +4,7 @@ import "../../styles/button.css";
 import "../../contexts/videoListcontext";
 import {useState} from "react";
 import { useVideoPlayerContext } from "../../contexts/videoListcontext";
+import {CREATE_NEW_PLAYLIST} from "../../constants/constants";
 
 function CreateNewPlaylist(){
  const {dispatch} = useVideoPlayerContext();
@@ -18,7 +19,7 @@ function CreateNewPlaylist(){
         <label><strong>Playlist Name:</strong></label>
         <input type="text" placeholder="name" onChange={handleChange} value={newPlaylistName}/>
         <button class="btn-text" onClick={()=>{
-            dispatch({type:"CREATE_NEW_PLAYLIST",payload:{newPlaylistName}})
+            dispatch({type:CREATE_NEW_PLAYLIST,payload:{newPlaylistName}})
             setNewPlaylistName("");
             }}>Create</button>
         

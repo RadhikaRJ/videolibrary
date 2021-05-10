@@ -2,13 +2,14 @@
 import {useState} from "react";
 import { useVideoPlayerContext,checkVideoInPlaylist} from "../../contexts/videoListcontext";
 import "../../styles/playlist.css";
+import {ADD_REMOVE_FROM_PLAYLIST} from "../../constants/constants";
     function AddToPlaylist(props){
 
     const {state,dispatch}=useVideoPlayerContext();
    
     const [addStatus,setAddStatus]=useState(false);
     const addIntoPlaylist=(playlist)=>{
-   dispatch({type:"ADD_REMOVE_FROM_PLAYLIST",payload:{playlist,props}});
+   dispatch({type:ADD_REMOVE_FROM_PLAYLIST,payload:{playlist,props}});
     }
 
    

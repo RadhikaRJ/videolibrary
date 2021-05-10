@@ -2,7 +2,7 @@ import {useVideoPlayerContext} from "../contexts/videoListcontext";
 import  ReactPlayer from "react-player";
 import "../styles/button.css";
 import "../styles/category.css";
-
+import {REMOVE_FROM_WATCHLATER} from "../constants/constants";
 function WatchLaterVideoList(){
 
     const {state,dispatch}=useVideoPlayerContext();
@@ -14,7 +14,7 @@ function WatchLaterVideoList(){
            state.watchLaterList.map((item)=>{
                 return (<div className="video-style">
                             <ReactPlayer url= {item.url} controls={true} width="420px" height="250px" />
-                            <button className="link-Text-Btn" onClick={()=>dispatch({type:"REMOVE_FROM_WATCHLATER",item})}>Remove</button>
+                            <button className="link-Text-Btn" onClick={()=>dispatch({type:REMOVE_FROM_WATCHLATER,item})}>Remove</button>
                            </div>) 
             })
        }

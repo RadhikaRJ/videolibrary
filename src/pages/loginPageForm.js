@@ -4,6 +4,11 @@ import "../styles/input.css";
 import {useAuth} from "../contexts/authcontext";
 import "../styles/category.css";
 import {useState} from "react";
+import {LOG_IN,
+    LOG_OUT,
+    CREDENTIALS_VERIFICATION_TRUE,
+    CREDENTIALS_VERIFICATION_FALSE
+}  from "../constants/constants";
 function LoginPageForm(){
  const [userCreds,setUserCreds]=useState({username:"",password:""})
     const userDetails={
@@ -36,19 +41,19 @@ function LoginPageForm(){
         onClick={()=>{
             
             if(authState.isUserLogin){               
-                authDispatch({type:"LOG_OUT"})
-                authDispatch({type:"CREDENTIALS_VERIFICATION_FALSE"})
+                authDispatch({type:LOG_OUT})
+                authDispatch({type:CREDENTIALS_VERIFICATION_FALSE})
             }
             else{       
                  if(verifyUserInput(userCreds.username,userCreds.password)) {
                      
-                    authDispatch({type:"LOG_IN"})
-                    authDispatch({type:"CREDENTIALS_VERIFICATION_TRUE"})
+                    authDispatch({type:LOG_IN})
+                    authDispatch({type:CREDENTIALS_VERIFICATION_TRUE})
                    
                  }   
                  if(!verifyUserInput(userCreds.username,userCreds.password)){
                   
-                   authDispatch({type:"CREDENTIALS_VERIFICATION_FALSE"})
+                   authDispatch({type:CREDENTIALS_VERIFICATION_FALSE})
                 }
             }
         }}
