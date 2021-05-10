@@ -1,5 +1,5 @@
 import {createContext,useContext,useState,useReducer} from "react";
-import {Route} from "react-router-dom";
+import {Route,Navigate} from "react-router-dom";
 import Login from "../pages/login";
 
 export const AuthContext=createContext();
@@ -18,12 +18,13 @@ export function useAuth(){
     return useContext(AuthContext);
 }
 
-export function PrivateRoute({login,element,...props}){
+export function PrivateRoute({path,...props}){
 
+    const {authState}=useAuth();
     
         
-        return  login ? ( <Route exact path={props.path} element={element} />)
-        : (<Route exact path={"/login"} element={<Login/>} />)
+        return  authState.isUserLogin ? ( <Route path={path} {...props}/>)
+        : (<Navigate state={{from:path}} {...props} replace to="/login"/>)
     
       
   }
