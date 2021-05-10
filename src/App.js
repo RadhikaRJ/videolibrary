@@ -12,7 +12,7 @@ import Favorites from "./pages/favorites";
 import WatchLaterVideoList from "./pages/watchLaterList";
 import Playlist from "./pages/private/playlists";
 import {useState } from "react";
-import {PrivateRoute} from "./contexts/authcontext";
+import {PrivateRoute} from "./PrivateRoute";
 import {useAuth} from "./contexts/authcontext";
 import Login from './pages/login';
 

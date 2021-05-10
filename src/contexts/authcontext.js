@@ -6,7 +6,7 @@ export const AuthContext=createContext();
 
 export function AuthContextProvider({children}){
     
-    const[authState,authDispatch]=useReducer(authReducer,{isUserLogin:false});
+    const[authState,authDispatch]=useReducer(authReducer,{isUserLogin:false,credVerificationStatus:false});
 
     return(
         <AuthContext.Provider value={{authState,authDispatch}}>{children}</AuthContext.Provider>
@@ -18,16 +18,7 @@ export function useAuth(){
     return useContext(AuthContext);
 }
 
-export function PrivateRoute({path,...props}){
 
-    const {authState}=useAuth();
-    
-        
-        return  authState.isUserLogin ? ( <Route path={path} {...props}/>)
-        : (<Navigate state={{from:path}} {...props} replace to="/login"/>)
-    
-      
-  }
 
 
 function authReducer(state,action){
@@ -41,6 +32,16 @@ function authReducer(state,action){
             return{
                 ...state,
                 isUserLogin:false,
+            }
+        case "CREDENTIALS_VERIFICATION_TRUE":
+            return{
+                ...state,
+                credVerificationStatus:true,
+            }
+        case "CREDENTIALS_VERIFICATION_FALSE":
+            return{
+                ...state,
+                credVerificationStatus:false,
             }
         default:
             return state;
