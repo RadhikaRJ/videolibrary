@@ -11,7 +11,16 @@ import SummerVideoList from "./pages/summerGardening";
 import Favorites from "./pages/favorites";
 import WatchLaterVideoList from "./pages/watchLaterList";
 import Playlist from "./pages/private/playlists";
+import {useState } from "react";
+import {PrivateRoute} from "./contexts/authcontext";
+import {useAuth} from "./contexts/authcontext";
+import Login from './pages/login';
+
 function App() {
+
+const {authState} =useAuth();
+
+  
   return (
     <div className="App">
             <Navigation/>               
@@ -23,7 +32,9 @@ function App() {
                     <Route exact path="/monsoon"  element={<MonsoonVideoList/>}/>
                     <Route exact path="/favorites"  element={<Favorites/>}/>
                     <Route exact path="/watchLaterList"  element={<WatchLaterVideoList/>}/>
-                    <Route exact path="/private/playlist"  element={<Playlist/>}/>
+                    <Route exact path="/login" element={<Login/>}/>
+                    <PrivateRoute path="/private/playlist" login={authState.isUserLogin} element={<Playlist/>}/> 
+                   
                 </Routes>        
                
              

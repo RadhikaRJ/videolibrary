@@ -1,7 +1,10 @@
 import "../../styles/nav.css";
 import "../../styles/button.css";
 import {Link} from "react-router-dom";
+import {useAuth} from "../../contexts/authcontext";
  function Nav(){
+
+    const {authState}=useAuth();
 
     return(<div>
        <nav class="navigation container ">
@@ -18,6 +21,9 @@ import {Link} from "react-router-dom";
                                 </li>
                                 <li class="list-item-inline">
                                     <Link to="/favorites" class="link"><span class="material-icons">favorite</span></Link>
+                                </li>
+                                <li class="list-item-inline">
+                                    <Link to="/login" class="link"><span class="material-icons-two-tone">{authState.isUserLogin ? "logout": "login"}</span></Link>
                                 </li>
                             </ul>
                         </nav>
