@@ -1,31 +1,28 @@
 .App {
   text-align: center;
-  --primary-color: #F9FAFB;
+  --primary-color: #f9fafb;
   --secondary-color: #831843;
- 
-  --tertiary-color: #7F1D1D;
-  
+
+  --tertiary-color: #7f1d1d;
+
   --current-selected-color: white;
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
-  color:var(--secondary-color);
-  
+  color: var(--secondary-color);
 }
-.video-categories{
-  display:flex;
-  flex-wrap:wrap;
+.video-categories {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  padding:0.5rem;
-  
+  padding: 0.5rem;
 }
-.main-homepage-container{
-  display:flex;
-  padding:1rem;
+.main-homepage-container {
+  display: flex;
+  padding: 1rem;
 }
 
-@media screen and (min-width:420px){
- 
-  .multiple-playlists-section{
+@media screen and (min-width: 420px) {
+  .multiple-playlists-section {
     flex-direction: column;
   }
 }

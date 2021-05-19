@@ -1,11 +1,10 @@
-.userLoginForm-container{
-    padding:1rem;
-    border:1px solid var(--secondary-color);
-    width:475px;
-    margin:0 auto;
-
+.userLoginForm-container {
+  padding: 1rem;
+  border: 1px solid var(--secondary-color);
+  width: 475px;
+  margin: 0 auto;
 }
 
-.userLoginForm-container>label{
-    font-weight: bold;
+.userLoginForm-container > label {
+  font-weight: bold;
 }

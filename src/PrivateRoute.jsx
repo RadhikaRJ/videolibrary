@@ -1,12 +1,11 @@
-import {useAuth} from "./contexts/authcontext";
-import {Route,Navigate} from "react-router-dom";
-export function PrivateRoute({path,...props}){
+import { useAuth } from "./contexts/authcontext";
+import { Route, Navigate } from "react-router-dom";
+export function PrivateRoute({ path, ...props }) {
+  const { authState } = useAuth();
 
-    const {authState}=useAuth();
-    
-        
-        return  authState.isUserLogin && authState.credVerificationStatus ? ( <Route path={path} {...props}/>)
-        : (<Navigate state={{from:path}} {...props} replace to="/login"/>)
-    
-      
-  }
+  return authState.isUserLogin && authState.credVerificationStatus ? (
+    <Route path={path} {...props} />
+  ) : (
+    <Navigate replace state={{ from: path }} {...props} to="/login" />
+  );
+}
