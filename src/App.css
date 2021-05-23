@@ -1,38 +1,28 @@
 .App {
   text-align: center;
-}
+  --primary-color: #f9fafb;
+  --secondary-color: #831843;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  --tertiary-color: #7f1d1d;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  --current-selected-color: white;
+  font-family: "Roboto", sans-serif;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  color: var(--secondary-color);
+}
+.video-categories {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+.main-homepage-container {
+  display: flex;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (min-width: 420px) {
+  .multiple-playlists-section {
+    flex-direction: column;
   }
 }
